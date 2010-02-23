@@ -7,7 +7,7 @@
 		<h3 class="ui-widget-header ui-corner-all"><%=h c.title %></h3> 
 		<p><%=h c.description %></p> 
     <p><%= link_to 'Edit', edit_project_task_url(@project,c) %>|
-    <%= link_to ('Delete', {:controller => 'task', :action => 'destroy', :id => c},
+    <%= link_to ('Delete', {:controller => 'tasks', :action => 'destroy', :id => c},
       :confirm => "Are you sure you want to delete this task?",
       :method => :delete)
       %></p>

@@ -16617,3 +16617,542 @@ Processing UserSessionsController#new (for 127.0.0.1 at 2010-02-23 14:20:50) [GE
 Rendering template within layouts/application
 Rendering user_sessions/new
 Completed in 153ms (View: 40, DB: 20) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-02-23 16:33:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (113.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 234ms (DB: 114) | 302 Found [http://localhost/projects]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-02-23 16:33:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (17.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 123ms (View: 24, DB: 18) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-02-23 16:33:35) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"admin", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"+9n2yLtEyTVuFrN6ELjhe6Ybk6+vVk1XfZQkQc+2ADg=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (18.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (43.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE `users` SET `login_count` = 5, `last_login_at` = '2010-02-22 08:24:01', `updated_at` = '2010-02-23 07:33:35', `last_request_at` = '2010-02-23 07:33:35', `current_login_at` = '2010-02-23 07:33:35' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 223ms (DB: 65) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-02-23 16:33:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-02-23 07:33:37', `last_request_at` = '2010-02-23 07:33:37' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM `projects` [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendered projects/_projectlist (38.0ms)
+Completed in 423ms (View: 46, DB: 32) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-02-23 16:33:40) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"projects"}
+  [4;36;1mUser Columns (19.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (2.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-02-23 07:33:40', `last_request_at` = '2010-02-23 07:33:40' WHERE `id` = 1[0m
+  [4;36;1mSQL (30.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProject Load (2.0ms)[0m   [0mSELECT * FROM `projects` [0m
+  [4;36;1mProject Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (1.0ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering projects/show
+Rendered projects/_projectlist (68.0ms)
+  [4;36;1mTask Load (2.0ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+  [4;35;1mTask Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 551ms (View: 223, DB: 91) | 200 OK [http://localhost/projects/2]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-02-23 16:33:44) [GET]
+  Parameters: {"project_id"=>"2", "action"=>"new", "controller"=>"tasks"}
+  [4;36;1mUser Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-02-23 07:33:44', `last_request_at` = '2010-02-23 07:33:44' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProject Load (1.0ms)[0m   [0mSELECT * FROM `projects` [0m
+  [4;36;1mProject Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (4.0ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+  [4;36;1mTask Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/new
+Rendered projects/_projectlist (40.0ms)
+  [4;35;1mTask Load (1.0ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+Completed in 307ms (View: 112, DB: 39) | 200 OK [http://localhost/projects/2/tasks/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2010-02-23 16:33:49) [POST]
+  Parameters: {"project_id"=>"2", "commit"=>"Create", "action"=>"create", "authenticity_token"=>"+9n2yLtEyTVuFrN6ELjhe6Ybk6+vVk1XfZQkQc+2ADg=", "task"=>{"title"=>"test", "priority"=>"High", "description"=>"test"}, "controller"=>"tasks"}
+  [4;36;1mUser Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-02-23 07:33:49', `last_request_at` = '2010-02-23 07:33:49' WHERE `id` = 1[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProject Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (0.0ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+  [4;35;1mTask Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTask Create (57.0ms)[0m   [0mINSERT INTO `tasks` (`project_id`, `updated_at`, `title`, `priority`, `description`, `author_id`, `created_at`) VALUES(2, '2010-02-23 07:33:49', 'test', 'High', 'test', NULL, '2010-02-23 07:33:49')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/2
+Completed in 399ms (DB: 89) | 302 Found [http://localhost/projects/2/tasks]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-02-23 16:33:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"projects"}
+  [4;35;1mUser Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-02-23 07:33:50', `last_request_at` = '2010-02-23 07:33:50' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM `projects` [0m
+  [4;35;1mProject Columns (12.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering projects/show
+Rendered projects/_projectlist (49.0ms)
+  [4;35;1mTask Load (1.0ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+  [4;36;1mTask Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 509ms (View: 177, DB: 46) | 200 OK [http://localhost/projects/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#destroy (for 127.0.0.1 at 2010-02-23 16:33:55) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"+9n2yLtEyTVuFrN6ELjhe6Ybk6+vVk1XfZQkQc+2ADg=", "id"=>"7", "controller"=>"task"}
+
+NameError (uninitialized constant TaskController):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (77.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-02-23 16:36:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"projects"}
+  [4;36;1mUser Columns (93.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-02-23 07:36:35', `last_request_at` = '2010-02-23 07:36:35' WHERE `id` = 1[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProject Load (2.0ms)[0m   [0mSELECT * FROM `projects` [0m
+  [4;36;1mProject Columns (19.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (3.0ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering projects/show
+Rendered projects/_projectlist (65.0ms)
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+  [4;35;1mTask Columns (17.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 2861ms (View: 275, DB: 140) | 200 OK [http://localhost/projects/2]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#destroy (for 127.0.0.1 at 2010-02-23 16:38:11) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"+9n2yLtEyTVuFrN6ELjhe6Ybk6+vVk1XfZQkQc+2ADg=", "id"=>"7", "controller"=>"task"}
+
+NameError (uninitialized constant TaskController):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (120.0ms)
+Rendered rescues/_request_and_response (4.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-02-23 16:39:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"projects"}
+  [4;36;1mUser Columns (18.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (13.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (3.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-02-23 07:39:14', `last_request_at` = '2010-02-23 07:39:14' WHERE `id` = 1[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProject Load (1.0ms)[0m   [0mSELECT * FROM `projects` [0m
+  [4;36;1mProject Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (4.0ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering projects/show
+Rendered projects/_projectlist (24.0ms)
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+  [4;35;1mTask Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 328ms (View: 100, DB: 66) | 200 OK [http://localhost/projects/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-23 16:39:32) [DELETE]
+  Parameters: {"_method"=>"delete", "authenticity_token"=>"+9n2yLtEyTVuFrN6ELjhe6Ybk6+vVk1XfZQkQc+2ADg="}
+
+ActionController::RoutingError (No route matches "/task/delete/7" with {:method=>:delete}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-02-23 16:39:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"projects"}
+  [4;36;1mUser Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-02-23 07:39:53', `last_request_at` = '2010-02-23 07:39:53' WHERE `id` = 1[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM `projects` [0m
+  [4;36;1mProject Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (3.0ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering projects/show
+Rendered projects/_projectlist (31.0ms)
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+  [4;35;1mTask Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 257ms (View: 122, DB: 36) | 200 OK [http://localhost/projects/2]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#destroy (for 127.0.0.1 at 2010-02-23 16:40:03) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"+9n2yLtEyTVuFrN6ELjhe6Ybk6+vVk1XfZQkQc+2ADg=", "id"=>"5", "controller"=>"task"}
+
+NameError (uninitialized constant TaskController):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (76.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-23 16:44:26) [GET]
+
+ActionController::RoutingError (No route matches "/projects/2/tasks/7/destroy" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#edit (for 127.0.0.1 at 2010-02-23 16:44:39) [GET]
+  Parameters: {"project_id"=>"2", "action"=>"edit", "id"=>"5", "controller"=>"tasks"}
+  [4;36;1mUser Columns (18.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (3.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-02-23 07:44:39', `last_request_at` = '2010-02-23 07:44:39' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProject Load (2.0ms)[0m   [0mSELECT * FROM `projects` [0m
+  [4;36;1mProject Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (4.0ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+  [4;36;1mTask Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mTask Load (3.0ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 5 AND (`tasks`.project_id = 2)) [0m
+Rendering template within layouts/application
+Rendering tasks/edit
+Rendered projects/_projectlist (23.0ms)
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+Completed in 260ms (View: 82, DB: 56) | 200 OK [http://localhost/projects/2/tasks/5/edit]
+  [4;35;1mSQL (2.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#edit (for 127.0.0.1 at 2010-02-23 16:44:42) [GET]
+  Parameters: {"project_id"=>"2", "action"=>"edit", "id"=>"7", "controller"=>"tasks"}
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-02-23 07:44:43', `last_request_at` = '2010-02-23 07:44:43' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM `projects` [0m
+  [4;35;1mProject Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (4.0ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+  [4;35;1mTask Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mTask Load (4.0ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 7 AND (`tasks`.project_id = 2)) [0m
+Rendering template within layouts/application
+Rendering tasks/edit
+Rendered projects/_projectlist (23.0ms)
+  [4;35;1mTask Load (1.0ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+Completed in 233ms (View: 67, DB: 41) | 200 OK [http://localhost/projects/2/tasks/7/edit]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-23 16:44:50) [GET]
+
+ActionController::RoutingError (No route matches "/projects/2/tasks/7/destroy" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-02-23 16:45:01) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"projects"}
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-02-23 07:45:01', `last_request_at` = '2010-02-23 07:45:01' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProject Load (1.0ms)[0m   [0mSELECT * FROM `projects` [0m
+  [4;36;1mProject Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (6.0ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering projects/show
+Rendered projects/_projectlist (24.0ms)
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+  [4;35;1mTask Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 324ms (View: 109, DB: 40) | 200 OK [http://localhost/projects/2]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#destroy (for 127.0.0.1 at 2010-02-23 16:45:07) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"+9n2yLtEyTVuFrN6ELjhe6Ybk6+vVk1XfZQkQc+2ADg=", "id"=>"7", "controller"=>"task"}
+
+NameError (uninitialized constant TaskController):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (114.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-02-23 16:48:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (27.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-02-23 07:48:29', `last_request_at` = '2010-02-23 07:48:29' WHERE `id` = 1[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProject Load (1.0ms)[0m   [0mSELECT * FROM `projects` [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendered projects/_projectlist (37.0ms)
+Completed in 254ms (View: 62, DB: 47) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-02-23 16:48:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"projects"}
+  [4;35;1mUser Columns (13.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-02-23 07:48:33', `last_request_at` = '2010-02-23 07:48:33' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM `projects` [0m
+  [4;35;1mProject Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (4.0ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering projects/show
+Rendered projects/_projectlist (24.0ms)
+  [4;35;1mTask Load (1.0ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+  [4;36;1mTask Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 329ms (View: 195, DB: 44) | 200 OK [http://localhost/projects/2]
+  [4;35;1mSQL (2.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#destroy (for 127.0.0.1 at 2010-02-23 16:48:36) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"+9n2yLtEyTVuFrN6ELjhe6Ybk6+vVk1XfZQkQc+2ADg=", "id"=>"7", "controller"=>"tasks"}
+  [4;35;1mUser Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-02-23 07:48:36', `last_request_at` = '2010-02-23 07:48:36' WHERE `id` = 1[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mCOMMIT[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Project without an ID):
+  app/controllers/tasks_controller.rb:47:in `destroy'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-02-23 16:49:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-02-23 07:49:46', `last_request_at` = '2010-02-23 07:49:46' WHERE `id` = 1[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProject Load (1.0ms)[0m   [0mSELECT * FROM `projects` [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendered projects/_projectlist (41.0ms)
+Completed in 190ms (View: 48, DB: 38) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-02-23 16:49:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"projects"}
+  [4;35;1mUser Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-02-23 07:49:50', `last_request_at` = '2010-02-23 07:49:50' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM `projects` [0m
+  [4;35;1mProject Columns (12.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (4.0ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering projects/show
+Rendered projects/_projectlist (24.0ms)
+  [4;35;1mTask Load (0.0ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+  [4;36;1mTask Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 223ms (View: 87, DB: 40) | 200 OK [http://localhost/projects/2]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#destroy (for 127.0.0.1 at 2010-02-23 16:49:54) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"+9n2yLtEyTVuFrN6ELjhe6Ybk6+vVk1XfZQkQc+2ADg=", "id"=>"7", "controller"=>"tasks"}
+  [4;35;1mUser Columns (20.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (34.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-02-23 07:49:54', `last_request_at` = '2010-02-23 07:49:54' WHERE `id` = 1[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTask Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mTask Load (4.0ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 7) [0m
+  [4;36;1mProject Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (4.0ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTask Destroy (0.0ms)[0m   [0mDELETE FROM `tasks` WHERE `id` = 7[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/2
+Completed in 398ms (DB: 93) | 302 Found [http://localhost/tasks/destroy/7]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-02-23 16:49:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"projects"}
+  [4;35;1mUser Columns (30.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-02-23 07:49:56', `last_request_at` = '2010-02-23 07:49:56' WHERE `id` = 1[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM `projects` [0m
+  [4;35;1mProject Columns (21.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (8.0ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering projects/show
+Rendered projects/_projectlist (49.0ms)
+  [4;35;1mTask Load (1.0ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.project_id = 2) [0m
+  [4;36;1mTask Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 425ms (View: 167, DB: 89) | 200 OK [http://localhost/projects/2]
