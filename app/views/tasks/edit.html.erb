@@ -8,7 +8,7 @@
   <% form_for([@project, c]) do |f| %>
   <%= f.error_messages %>
 
-  <div id="effect" class="ui-widget-content ui-corner-all"> 
+  <div id="effect" class="ui-widget-content ui-corner-all <%= c.priority %>"> 
 		<h3 class="ui-widget-header ui-corner-all"><%= f.text_field :title %></h3> 
 		<p><%= f.text_area :description %></p> 
     <p><%= f.select(:priority, options_for_select([['High', 'High'], ['Medium', 'Medium'], ['Low', 'Low']])) %>

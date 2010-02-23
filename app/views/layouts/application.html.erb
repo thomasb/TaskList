@@ -19,7 +19,9 @@
   <SCRIPT type="text/javascript"> 
 $(document).ready(function () {
 	$('body').layout({ applyDefaultStyles: true });
-  $(".accordion").accordion({ event: 'none', collapsible: true, active : false}).accordion('activate',<%= @project.id - 2  rescue false %>);
+  var expandedItem = $('.projectid<%= @project.id rescue nil %>');
+  var expandedIndex = $('#projectList h3').index(expandedItem);
+  $(".accordion").accordion({ event: 'none', collapsible: true, active : false}).accordion('activate', expandedIndex);
 });
 </SCRIPT> 
 </head>

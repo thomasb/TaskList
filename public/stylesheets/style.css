@@ -17,6 +17,7 @@ height:100px;
 .High > .ui-widget-header
 {
 background-image: url(../images/ui-bg_gloss-wave_35_Red_500x100.png);
+border: 1px solid #D13035;
 }
 
 .Medium > .ui-widget-header
@@ -27,6 +28,7 @@ background-image: url(../images/ui-bg_gloss-wave_35_Red_500x100.png);
 .Low > .ui-widget-header
 {
 background-image: url(../images/ui-bg_gloss-wave_35_Green_500x100.png);
+border: 1px solid #4DD130;
 }
 
 .hidden

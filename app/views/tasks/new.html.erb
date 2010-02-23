@@ -22,7 +22,7 @@
 </div>
 
 <% @project.tasks.reject{|n| n.new_record?}.each do |c| %>
-<div class="ui-widget-content ui-corner-all"> 
+<div class="ui-widget-content ui-corner-all <%= c.priority %>"> 
 		<h3 class="ui-widget-header ui-corner-all"><%=h c.title %></h3> 
 		<p><%=h c.description %></p> 
     <p><%= link_to 'Edit', edit_project_task_url(@project,c) %>|
