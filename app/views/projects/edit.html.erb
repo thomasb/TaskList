@@ -1,0 +1,32 @@
+<%= render :partial => 'projectlist' %>
+<% @project.tags.build if @project.tags.empty? %>
+<h1>Editing project</h1>
+
+<% form_for(@project) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :author %><br />
+    <%= f.collection_select(:author_id, Author.all, :id, :name) %> 
+  </p>
+  <% f.fields_for :tags do |tag_form| %>
+    <%= render :partial => 'tag', :locals => { :f => tag_form } %>
+  <% end %>
+  <p>
+    <%= add_child_link "Add new tag", f, :tags %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @project %> |
+<%= link_to 'Back', projects_path %>

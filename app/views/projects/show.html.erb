@@ -1,0 +1,20 @@
+<%= render :partial => 'projectlist' %>
+
+<h2>Tasks</h2>
+<% @project.tasks.each do |c| %>
+  
+  <div class="ui-widget-content ui-corner-all <%= c.priority %>"> 
+		<h3 class="ui-widget-header ui-corner-all"><%=h c.title %></h3> 
+		<p><%=h c.description %></p> 
+    <p><%= link_to 'Edit', edit_project_task_url(@project,c) %>|
+    <%= link_to ('Delete', {:controller => 'task', :action => 'destroy', :id => c},
+      :confirm => "Are you sure you want to delete this task?",
+      :method => :delete)
+      %></p>
+	</div>
+  
+<% end %>
+
+<p>
+    <%= link_to 'New task', new_project_task_url(@project) %>
+</p>

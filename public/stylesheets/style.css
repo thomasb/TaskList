@@ -1,0 +1,35 @@
+.ui-widget-content
+{
+padding:5px;
+}
+
+.ui-widget-header
+{
+padding:2px;
+}
+
+textarea
+{
+width:99%;
+height:100px;
+}
+
+.High > .ui-widget-header
+{
+background-image: url(../images/ui-bg_gloss-wave_35_Red_500x100.png);
+}
+
+.Medium > .ui-widget-header
+{
+
+}
+
+.Low > .ui-widget-header
+{
+background-image: url(../images/ui-bg_gloss-wave_35_Green_500x100.png);
+}
+
+.hidden
+{
+display:none;
+}

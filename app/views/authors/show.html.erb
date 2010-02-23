@@ -1,0 +1,8 @@
+<h1>Author of <%= @project.title %></h1>
+
+<p>
+  <b>name:</b>
+  <%=h @author.name %>
+</p>
+
+<%= link_to 'Edit', edit_project_author_path(@project, @author) %>
