@@ -1,3 +1,13 @@
 Learn Ruby on Rails and build a simple application in one week !
 
 The gooal is to build a simple project and task management application.
+
+The app will use:
+- Ruby on Rails
+- Jquery
+- Authlogic (authentication)
+- Acl9 (authorization)
+
+The database side if the application is supposed to be DBMS-agnostic (On my local computer i was testing with MySql. 
+The hosted version uses PostgreSql).
+
